@@ -1,0 +1,15 @@
+hubot:
+  build: .
+  restart: always
+  env_file: .env
+  links:
+   - redis
+  ports:
+   - 8080
+
+redis:
+ image: redis
+ restart: always
+ env_file: .env
+ ports:
+  - "6379:6379"
